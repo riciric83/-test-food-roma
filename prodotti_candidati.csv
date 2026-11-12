@@ -1,0 +1,11 @@
+Brand;Prodotto;Categoria;Ingrediente_principale;Prezzo_ipotizzato;Domanda;Concorrenza;Complessita;Stato
+Fuego;Birria Fries;Street Food;Manzo;12.90;Da verificare;Da verificare;Media;Candidato
+Fuego;Loaded Nachos;Street Food;Mais;9.90;Da verificare;Alta;Bassa;Candidato
+Fuego;Quesadilla Premium;Street Food;Formaggio;11.90;Da verificare;Media;Bassa;Candidato
+Fuego;Smash Taco;Street Food;Manzo;10.90;Da verificare;Da verificare;Media;Candidato
+Fuego;Mexican Rice Bowl;Bowl;Riso;11.90;Da verificare;Media;Bassa;Candidato
+Seoul Chicken Club;Korean Chicken Box;Chicken;Pollo;12.90;Da verificare;Alta;Media;Candidato
+Seoul Chicken Club;Korean Corn Dog;Street Food;Wurstel;7.90;Da verificare;Media;Media;Candidato
+Seoul Chicken Club;Korean Loaded Fries;Street Food;Patate;9.90;Da verificare;Da verificare;Bassa;Candidato
+Seoul Chicken Club;Korean Rice Bowl;Bowl;Riso;11.90;Da verificare;Alta;Bassa;Candidato
+Seoul Chicken Club;Korean Chicken Wrap;Street Food;Pollo;10.90;Da verificare;Da verificare;Media;Candidato
