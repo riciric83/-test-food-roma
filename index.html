@@ -3,108 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Food Roma | Due nuove esperienze di street food</title>
+<title>Food Roma - Scegli il tuo street food</title>
 
 <style>
 * {box-sizing:border-box}
 
 body {
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#111;
-    color:white;
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#151515;
+ color:white;
 }
 
 header {
-    text-align:center;
-    padding:55px 20px;
-    background:#191919;
+ text-align:center;
+ padding:45px 20px;
+ background:#202020;
 }
 
-header h1 {
-    font-size:38px;
-    margin-bottom:10px;
-}
-
-header p {
-    color:#bbb;
-    font-size:17px;
-}
+header h1 {font-size:36px}
+header p {color:#ccc}
 
 .container {
-    max-width:1000px;
-    margin:auto;
-    padding:35px 20px;
+ max-width:750px;
+ margin:auto;
+ padding:25px 18px;
 }
 
 .brands {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:15px;
 }
 
 .card {
-    padding:30px;
-    border-radius:15px;
-    background:#252525;
-    text-align:center;
+ background:#252525;
+ padding:20px;
+ border-radius:12px;
+ text-align:center;
 }
 
-.card h2 {
-    font-size:30px;
-}
-
+.card h2 {font-size:25px}
 .fuego {color:#ff7043}
 .seoul {color:#e8bd64}
 
-.card p {
-    color:#ccc;
-    line-height:1.6;
-}
-
-.products {
-    margin-top:20px;
-    text-align:left;
-    line-height:2;
-}
-
-h2.section {
-    text-align:center;
-    margin-top:55px;
-}
+.card p {color:#ccc;line-height:1.5}
 
 form {
-    max-width:550px;
-    margin:30px auto;
-    background:#252525;
-    padding:25px;
-    border-radius:12px;
+ background:#252525;
+ padding:25px;
+ border-radius:12px;
+ margin-top:30px;
 }
 
 label {
-    display:block;
-    margin-top:20px;
+ display:block;
+ margin-top:20px;
+ font-weight:bold;
 }
 
-select, input, button {
-    width:100%;
-    padding:14px;
-    margin-top:10px;
-    border-radius:7px;
-    border:none;
-    font-size:16px;
+select,input {
+ width:100%;
+ padding:13px;
+ margin-top:9px;
+ border:0;
+ border-radius:6px;
+ font-size:15px;
 }
 
 button {
-    background:#e8bd64;
-    font-weight:bold;
-    cursor:pointer;
+ width:100%;
+ padding:16px;
+ margin-top:25px;
+ border:0;
+ border-radius:7px;
+ background:#e8bd64;
+ font-size:16px;
+ font-weight:bold;
+ cursor:pointer;
 }
 
 footer {
-    text-align:center;
-    padding:30px;
-    color:#888;
+ text-align:center;
+ color:#888;
+ padding:25px;
+ font-size:13px;
+}
+
+@media(max-width:500px) {
+ .brands {grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -113,7 +100,8 @@ footer {
 
 <header>
 <h1>FOOD ROMA</h1>
-<p>Due nuove esperienze di street food. Quale sceglieresti?</p>
+<p>Due nuovi marchi. Due esperienze di street food.</p>
+<p>Aiutaci a scegliere cosa portare a Roma.</p>
 </header>
 
 <div class="container">
@@ -122,50 +110,22 @@ footer {
 
 <div class="card">
 <h2 class="fuego">FUEGO</h2>
-<p>Street food dal carattere messicano.
-Sapori intensi, ingredienti ricercati e combinazioni sorprendenti.</p>
-
-<div class="products">
-<strong>PRODOTTI IN PROVA</strong>
-<ul>
-<li>Birria Fries</li>
-<li>Loaded Nachos</li>
-<li>Quesadilla Premium</li>
-<li>Smash Taco</li>
-<li>Mexican Rice Bowl</li>
-</ul>
-</div>
+<p>Street food latinoamericano.
+Sapori intensi, ricette particolari e ingredienti ricercati.</p>
 </div>
 
 <div class="card">
 <h2 class="seoul">SEOUL CHICKEN CLUB</h2>
-<p>Street food ispirato alla cucina coreana.
-Croccantezza, salse particolari e combinazioni originali.</p>
-
-<div class="products">
-<strong>PRODOTTI IN PROVA</strong>
-<ul>
-<li>Korean Chicken Box</li>
-<li>Korean Corn Dog</li>
-<li>Korean Loaded Fries</li>
-<li>Korean Rice Bowl</li>
-<li>Korean Chicken Wrap</li>
-</ul>
-</div>
+<p>Street food asiatico.
+Croccantezza, sapori coreani e combinazioni originali.</p>
 </div>
 
 </div>
-
-<h2 class="section">AIUTACI A SCEGLIERE</h2>
-<p style="text-align:center;color:#bbb">
-Stiamo studiando due nuovi marchi a Roma.
-Quale proveresti?
-</p>
 
 <form id="survey">
 
-<label>Quale marchio preferisci?</label>
-<select id="brand" required>
+<label>1. Quale marchio preferisci?</label>
+<select required id="brand">
 <option value="">Seleziona</option>
 <option>Fuego</option>
 <option>Seoul Chicken Club</option>
@@ -173,46 +133,94 @@ Quale proveresti?
 <option>Nessuno</option>
 </select>
 
-<label>Quale prodotto ti incuriosisce maggiormente?</label>
-<select id="product" required>
+<label>2. Quale prodotto ti incuriosisce maggiormente?</label>
+<select required id="product">
 <option value="">Seleziona</option>
+<optgroup label="FUEGO">
 <option>Birria Fries</option>
 <option>Loaded Nachos</option>
-<option>Quesadilla Premium</option>
+<option>Quesadilla</option>
+<option>Smash Taco</option>
+<option>Arepas</option>
+<option>Mexican Rice Bowl</option>
+<option>Burrito</option>
+</optgroup>
+<optgroup label="SEOUL CHICKEN CLUB">
 <option>Korean Chicken Box</option>
 <option>Korean Corn Dog</option>
 <option>Korean Loaded Fries</option>
+<option>Korean Rice Bowl</option>
+<option>Mandu</option>
+<option>Korean Chicken Wrap</option>
+<option>Korean Bao</option>
+</optgroup>
 </select>
 
-<label>Quanto spenderesti per un piatto?</label>
-<select id="price" required>
+<label>3. Quanto spenderesti per un piatto?</label>
+<select required id="dishprice">
 <option value="">Seleziona</option>
 <option>8-10 €</option>
 <option>11-13 €</option>
 <option>14-16 €</option>
-<option>Più di 16 €</option>
+<option>Oltre 16 €</option>
 </select>
 
-<label>In quale zona di Roma vivi o lavori?</label>
-<input type="text" id="area" placeholder="Es. Prati, EUR, Centro..." required>
+<label>4. In quale zona di Roma vivi o lavori?</label>
+<input id="area" type="text" placeholder="Es. Prati, EUR, Centro..." required>
 
-<button type="submit">INVIA PREFERENZE</button>
+<label>5. Quanto spesso ordini delivery?</label>
+<select required id="frequency">
+<option value="">Seleziona</option>
+<option>Più volte a settimana</option>
+<option>Una volta a settimana</option>
+<option>2-3 volte al mese</option>
+<option>Raramente</option>
+</select>
+
+<label>6. Quanto spendi mediamente per un ordine delivery?</label>
+<select required id="budget">
+<option value="">Seleziona</option>
+<option>Meno di 15 €</option>
+<option>15-25 €</option>
+<option>26-35 €</option>
+<option>Oltre 35 €</option>
+</select>
+
+<label>7. Quale cucina preferisci?</label>
+<select required id="cuisine">
+<option value="">Seleziona</option>
+<option>Tradizionale</option>
+<option>Fusion</option>
+<option>Entrambe</option>
+</select>
+
+<label>8. Proveresti un nuovo marchio di street food a Roma?</label>
+<select required id="try">
+<option value="">Seleziona</option>
+<option>Sicuramente</option>
+<option>Probabilmente</option>
+<option>No</option>
+</select>
+
+<label>9. Vuoi ricevere informazioni sull'eventuale lancio? (Facoltativo)</label>
+<input id="contact" type="email" placeholder="La tua email">
+
+<button type="submit">INVIA LE RISPOSTE</button>
 
 <p id="message" style="text-align:center"></p>
 
 </form>
-
 </div>
 
 <footer>
-FOOD ROMA – Progetto di ricerca e validazione commerciale
+FOOD ROMA - Ricerca e validazione commerciale
 </footer>
 
 <script>
-document.getElementById("survey").addEventListener("submit", function(e) {
-    e.preventDefault();
-    document.getElementById("message").textContent =
-    "Grazie! Questa è una versione dimostrativa del sondaggio.";
+document.getElementById("survey").addEventListener("submit",function(e){
+ e.preventDefault();
+ document.getElementById("message").textContent =
+ "Grazie per aver partecipato alla nostra ricerca!";
 });
 </script>
 
