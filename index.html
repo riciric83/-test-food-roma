@@ -217,16 +217,52 @@ FOOD ROMA - Ricerca e validazione commerciale
 </footer>
 
 <script>
-document.getElementById("survey").addEventListener("submit",function(e){
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby2Ke7KyQ5fvP5J4yBzQO9-BQLDtpTTw3m8xOqWyRa4b0Txp7L8DLnELMy6jXfgMUju/exec";
 
-e.preventDefault();
+document.getElementById("survey").addEventListener("submit", async function(e) {
 
-document.getElementById("message").textContent =
+    e.preventDefault();
 
-"Grazie per aver partecipato alla nostra ricerca!";
+    const button = document.querySelector("button[type='submit']");
+    const message = document.getElementById("message");
+
+    button.disabled = true;
+    button.textContent = "INVIO IN CORSO...";
+
+    const data = {
+        brand: document.getElementById("brand").value,
+        product: document.getElementById("product").value,
+        dishprice: document.getElementById("dishprice").value,
+        area: document.getElementById("area").value,
+        frequency: document.getElementById("frequency").value,
+        budget: document.getElementById("budget").value,
+        cuisine: document.getElementById("cuisine").value,
+        try: document.getElementById("try").value,
+        contact: document.getElementById("contact").value,
+        date: new Date().toISOString()
+    };
+
+    try {
+        await fetch(SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(data)
+        });
+
+        message.textContent = "Grazie! Risposte inviate.";
+        document.getElementById("survey").reset();
+        button.textContent = "RISPOSTE INVIATE";
+
+    } catch (error) {
+        message.textContent = "Errore durante l'invio. Riprova.";
+        button.disabled = false;
+        button.textContent = "INVIA LE RISPOSTE";
+    }
 
 });
 </script>
-
 </body>
 </html>
